@@ -121,8 +121,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   child: BlocBuilder<FormBloc, FormStateValid>(
                     builder: (context, state) {
                       return Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           InputText(
                             enable: widget.ci != '' ? true : false,
@@ -171,6 +171,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             onChange: (value) {},
                             text: "Cédula",
                           ),
+                          // SizedBox(height: 20,)
                           InputText(
                             validator: (input) =>
                                 input!.isEmpty ? 'Ingrese Los Nombres' : null,
@@ -184,6 +185,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             onChange: (value) {},
                             text: "Nombres ",
                           ),
+                          
                           InputText(
                             validator: (input) =>
                                 input!.isEmpty ? 'Ingrese el Apellido' : null,

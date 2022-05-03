@@ -28,40 +28,38 @@ class InputText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: SizedBox(
-          height: 30,
-          child: TextFormField(
-            maxLength: maxLenght,
-            maxLines: maxLines,
-            controller: textEditController,
-            keyboardType: textInputType,
-            onChanged: onChange,
-            readOnly: enable!,
-            inputFormatters: <TextInputFormatter>[textInputFormatter!],
-            validator: validator,
-            focusNode:  emailFocusNode,
-            decoration: InputDecoration(
-              errorText: errortext,
-              icon: icon,
-              contentPadding:
-                  const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
-              focusColor: Theme.of(context).colorScheme.primary,
-              labelText: text,
-              labelStyle:
-                  TextStyle(color: Theme.of(context).textTheme.bodyText1!.color),
-              hintStyle: const TextStyle(color: Colors.grey),
-              hintText: text,
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
-                borderSide: const BorderSide(
-                  width: 0,
-                  style: BorderStyle.none,
-                ),
+    return SizedBox(
+        height: 50,
+        child: TextFormField(
+          maxLength: maxLenght,
+          maxLines: maxLines,
+          controller: textEditController,
+          keyboardType: textInputType,
+          onChanged: onChange,
+          readOnly: enable!,
+          inputFormatters: <TextInputFormatter>[textInputFormatter!],
+          validator: validator,
+          focusNode:  emailFocusNode,
+          decoration: InputDecoration(
+            errorText: errortext,
+            icon: icon,
+            contentPadding:
+                const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
+            focusColor: Theme.of(context).colorScheme.primary,
+            labelText: text,
+            labelStyle:
+                TextStyle(color: Theme.of(context).textTheme.bodyText1!.color),
+            hintStyle: const TextStyle(color: Colors.grey),
+            hintText: text,
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8),
+              borderSide: const BorderSide(
+                width: 0,
+                style: BorderStyle.none,
               ),
-              filled: true,
             ),
-          )),
-    );
+            filled: true,
+          ),
+        ));
   }
 }
